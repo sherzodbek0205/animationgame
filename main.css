@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #8BC34A;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.attempts {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.message {
+  font-size: 24px;
+}
+
+.congratulations {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FF4081;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+.game-over {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F44336;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.box.scale-jump {
+  transform: scale(1.2) rotate(360deg);
+}
+
+.congratulations.open {
+  display: block;
+  animation: open 0.5s ease-in-out forwards;
+}
+
+.game-over.open {
+  display: block;
+  animation: open 0.5s ease-in-out forwards;
+}
+
+@keyframes open {
+  0% {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+}
